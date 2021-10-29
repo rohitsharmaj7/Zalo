@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>
+            WhatsApp alternate Zalo
+        </title>
+        <script src="jquery.js"></script>
+    </head>
+    <body>
+    <p>Calling the Zalo Api</p>
+    <script>
+            $.ajax({
+                url: "https://graph.zalo.me/v2.0/me?fields=id%2Cname%2Cpicture",
+                headers:{
+                    "access_token":"Ree6KOUGjWHjYGzKY9Qo1MIC25g9ZFDVB-SqGvg1aKG4o4XfxOMpErMVTnZ6_AqqA91iABlwXNytvZLlcldDP3M53t6-_kCaA9ej0uBMxLSBdbSSjOUn61luR0IsfuO39F4vLOwUtdybs1jAZA-cI0h36bkmYk9w9-yiJR_nnbigctOCd_oBMHQXEaR_pOfpJerHVCZLccbGpqrRwhUnR56lV6ZSijb6T_O9S9-0od0tcdClnkIT12kVSoU1_gmg29zf1hZ3b5OJeNjykT_ASrM5C2Nzs-ueH5NSBeXcWOg_1W",
+                    "Access-Control-Allow-Origin":"*",
+                    "Accept":"*"
+                },
+                type: "GET",
+                success: function (result) {
+                 console.log("Success");
+                },
+                error: function (error) {
+                 console.log("Error");
+                }
+            });
+    </script>
+    </body>
+</html>
