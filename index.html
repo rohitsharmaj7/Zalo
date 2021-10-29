@@ -6,12 +6,17 @@
         <script src="jquery.js"></script>
     </head>
     <body>
-    <p>Calling the Zalo Api</p>
+        <p>Calling the Zalo Api</p>
+        <input id="token" type="text"/>
+        <button>Make an API call</button>   
     <script>
-            $.ajax({
+           $('button').click(function(){
+               var collectedToken = $("#token").val();
+               
+               $.ajax({
                 url: "https://graph.zalo.me/v2.0/me?fields=id,name,picture",
                 headers:{
-                    "access_token":"Y1GbOf-xq4UB5ondaBtKHe8IAscHfuKtwreBIFwqzIwlIGzRmgQlAj1J8qk-aAS-gaCFSSotinJRJYrdhx2b5SzbB4Y3kBWqcKyoTuwQl2_fDXODdDknUDSaFWAivxyYmqqp1PFZXbNJ8HWHaFNcCF0YJLIMqkSLpHyVTPlFc3cACnHtcDsj2SmgM6Y-ujGcgHHZNh_Expp54tHhliN1Aj4qNcwWdSe2rrD6V9ExuWJUKrz3aRl83-P_F4chh9WKq4TcQ9IjoXdZLJPjjvx27VPZFbAIdf4gJrWYcyqMcQ7PHG"
+                    "access_token":collectedToken
                 },
                 type: "GET",
                 success: function (result) {
@@ -21,6 +26,8 @@
                  console.log("Error");
                 }
             });
+           });
+            
     </script>
     </body>
 </html>
